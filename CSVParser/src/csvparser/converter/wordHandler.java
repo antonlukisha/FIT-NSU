@@ -1,0 +1,83 @@
+package csvparser.converter;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import static java.lang.Character.isLetterOrDigit;
+import java.util.HashMap;
+import java.util.Map;
+
+public class wordHandler
+{
+    private final String path;
+    private int countWords;
+    private final Map<String, Integer> data;
+    
+    public wordHandler(String name)
+    {
+        this.path = "C://Users/Антон/Documents/NetBeansProjects/CSVParser/src/csvparser/sourse/" + name;
+        this.countWords = 0;
+        this.data = new HashMap<>();
+        countWordsOfFile();
+    }
+    
+    private void countWordsOfFile()
+    {
+        Reader reader = null;
+        try
+        {
+            reader = new InputStreamReader(new FileInputStream(this.path));
+            int symb;
+            StringBuilder stream = new StringBuilder();
+            int length = 0, begin = 0;
+            while((symb = reader.read())!= -1)
+            {
+                
+                if (isLetterOrDigit((char)symb) == true)
+                {
+                    stream.append((char)symb);
+                    length++;
+                }
+                else
+                {
+                    if(length != 0)
+                    {
+                        data.put(stream.substring(begin, begin + length), (data.getOrDefault(stream.substring(begin, begin + length), 0) + 1));
+                        countWords++;
+                        begin += length;
+                        length = 0;
+                    }
+                }
+            }
+        }
+        catch (IOException exception)
+        {
+            System.err.println(exception.toString()); 
+        }
+        finally
+        {
+            if (null != reader)
+            {
+                try
+                {
+                    reader.close();
+                }
+                catch (IOException exception)
+                {
+                    exception.printStackTrace(System.err);
+                }
+            }
+        }
+    }
+    
+    public Map<String, Integer> getData()
+    {
+        return this.data;
+    }
+    
+    public int getCountWords()
+    {
+        return this.countWords;
+    }
+}
