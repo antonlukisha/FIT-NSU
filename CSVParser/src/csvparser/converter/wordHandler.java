@@ -24,16 +24,12 @@ public class wordHandler
     
     private void countWordsOfFile()
     {
-        Reader reader = null;
-        try
+        try (Reader reader = new InputStreamReader(new FileInputStream(this.path));)
         {
-            reader = new InputStreamReader(new FileInputStream(this.path));
-            int symb;
+            int symb, length = 0;
             StringBuilder stream = new StringBuilder();
-            int length = 0;
             while((symb = reader.read())!= -1)
             {
-                
                 if (isLetterOrDigit((char)symb) == true)
                 {
                     stream.append((char)symb);
@@ -54,20 +50,6 @@ public class wordHandler
         catch (IOException exception)
         {
             System.err.println(exception.toString()); 
-        }
-        finally
-        {
-            if (null != reader)
-            {
-                try
-                {
-                    reader.close();
-                }
-                catch (IOException exception)
-                {
-                    exception.printStackTrace(System.err);
-                }
-            }
         }
     }
     
