@@ -30,7 +30,7 @@ public class wordHandler
             reader = new InputStreamReader(new FileInputStream(this.path));
             int symb;
             StringBuilder stream = new StringBuilder();
-            int length = 0, begin = 0;
+            int length = 0;
             while((symb = reader.read())!= -1)
             {
                 
@@ -43,9 +43,9 @@ public class wordHandler
                 {
                     if(length != 0)
                     {
-                        data.put(stream.substring(begin, begin + length), (data.getOrDefault(stream.substring(begin, begin + length), 0) + 1));
+                        data.put(stream.toString(), (data.getOrDefault(stream.toString(), 0) + 1));
+                        stream = new StringBuilder();
                         countWords++;
-                        begin += length;
                         length = 0;
                     }
                 }

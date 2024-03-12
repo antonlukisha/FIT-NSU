@@ -22,10 +22,8 @@ public class writerCSV
     
     public void writeWithStatistic(int countWords, Map<String, Integer> data)
     {
-        Writer writer = null;
-        try
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(this.path)))
         {
-            writer = new OutputStreamWriter(new FileOutputStream(this.path));
             LinkedHashMap<String, Integer> sortedData = data.entrySet()
                     .stream().sorted(Map.Entry.comparingByValue())
                     .collect(Collectors
@@ -43,20 +41,6 @@ public class writerCSV
         catch (IOException exception)
         {
             System.err.println(exception.toString()); 
-        }
-        finally
-        {
-            if (null != writer)
-            {
-                try
-                {
-                    writer.close();
-                }
-                catch (IOException exception)
-                {
-                    exception.printStackTrace(System.err);
-                }
-            }
         }
     }
 }
