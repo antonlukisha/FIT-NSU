@@ -1,1 +1,1 @@
-# FIT-NSU
+# Projects
