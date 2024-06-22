@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Tony/Tetris/src/src/model/TetrisBoard.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/model/TetrisGame.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/model/TetrominoType.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/view/AboutView.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/model/Tetromino.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/model/HighScores.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/view/TetrisView.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/controller/MenuController.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/view/HighScoresView.java</file>
+            <file>file:/C:/Users/Tony/Tetris/build.xml</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/controller/MainController.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/controller/TetrisController.java</file>
+            <file>file:/C:/Users/Tony/Tetris/src/src/Main.java</file>
+        </group>
+    </open-files>
+</project-private>
